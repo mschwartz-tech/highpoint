@@ -8,7 +8,6 @@ const serviceOptions = [
   "Hardscaping & Patios",
   "Landscape Design",
   "Snow Removal",
-  "Irrigation Systems",
   "Other",
 ];
 
@@ -69,15 +68,15 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-16 sm:py-20 lg:py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-10 sm:mb-14"
         >
           <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-3">
             Get In Touch
@@ -91,24 +90,24 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16">
           {/* Contact info */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5 }}
             className="lg:col-span-2 flex flex-col justify-center"
           >
-            <div className="bg-background rounded-card p-8">
+            <div className="bg-background rounded-card p-6 sm:p-8">
               <h3 className="text-xl font-bold text-text-primary mb-2">
                 Contact Information
               </h3>
-              <p className="text-text-secondary text-sm mb-8">
+              <p className="text-text-secondary text-sm mb-6 sm:mb-8">
                 Reach out directly or use the form — we are happy to help.
               </p>
 
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-5 sm:gap-6">
                 {contactInfo.map((item) => (
                   <a
                     key={item.label}
@@ -131,8 +130,8 @@ export default function Contact() {
               </div>
 
               {/* Divider */}
-              <div className="border-t border-gray-200 mt-8 pt-6">
-                <p className="text-text-secondary text-sm">
+              <div className="border-t border-gray-200 mt-6 sm:mt-8 pt-5 sm:pt-6">
+                <p className="text-text-secondary text-sm leading-relaxed">
                   <span className="font-semibold text-text-primary">Business hours:</span>
                   <br />
                   Mon–Fri: 7am – 6pm
@@ -145,10 +144,10 @@ export default function Contact() {
 
           {/* Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="lg:col-span-3"
           >
             {submitted ? (
@@ -171,7 +170,7 @@ export default function Contact() {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                 {/* Name */}
                 <div className="sm:col-span-1">
                   <label
@@ -188,7 +187,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Jane Smith"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-btn text-text-primary placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-btn text-text-primary placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-base sm:text-sm"
                   />
                 </div>
 
@@ -208,7 +207,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="jane@example.com"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-btn text-text-primary placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-btn text-text-primary placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-base sm:text-sm"
                   />
                 </div>
 
@@ -227,7 +226,7 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="651-555-0100"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-btn text-text-primary placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-btn text-text-primary placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-base sm:text-sm"
                   />
                 </div>
 
@@ -245,7 +244,7 @@ export default function Contact() {
                     required
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-btn text-text-primary focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm bg-white cursor-pointer"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-btn text-text-primary focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-base sm:text-sm bg-white cursor-pointer"
                   >
                     <option value="" disabled>
                       Select a service...
@@ -273,7 +272,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell us about your project or any questions you have..."
-                    className="w-full px-4 py-3 border border-gray-200 rounded-btn text-text-primary placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-sm resize-none"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-btn text-text-primary placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-base sm:text-sm resize-none"
                   />
                 </div>
 

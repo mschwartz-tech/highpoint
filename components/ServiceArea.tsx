@@ -12,12 +12,13 @@ const communities = [
   "Fridley",
   "Blaine",
   "Lino Lakes",
+  "St. Anthony",
   "And Surrounding Areas",
 ];
 
 export default function ServiceArea() {
   return (
-    <section className="py-20 lg:py-28 bg-primary relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-28 bg-primary relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-white/5 -translate-x-1/2 -translate-y-1/2" />
@@ -44,13 +45,13 @@ export default function ServiceArea() {
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 sm:mb-12">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5 }}
           >
             {/* Map pin icon */}
             <div className="flex justify-center mb-4">
@@ -66,7 +67,7 @@ export default function ServiceArea() {
             <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
               Proudly Serving the North Metro
             </h2>
-            <p className="text-white/75 text-lg mt-4 max-w-xl mx-auto">
+            <p className="text-white/75 text-base sm:text-lg mt-4 max-w-xl mx-auto leading-relaxed">
               Our crew is ready to serve homeowners and businesses throughout
               the Twin Cities north metro area.
             </p>
@@ -75,20 +76,20 @@ export default function ServiceArea() {
 
         {/* Community tags */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3"
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex flex-wrap justify-center gap-2.5 sm:gap-3"
         >
           {communities.map((city, i) => (
             <motion.div
               key={city}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.05 * i }}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 ${
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 0.3, delay: 0.03 * i }}
+              className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-200 ${
                 city === "And Surrounding Areas"
                   ? "bg-accent text-white"
                   : "bg-white/15 text-white hover:bg-white/25 cursor-pointer"
@@ -108,9 +109,9 @@ export default function ServiceArea() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center mt-10"
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="text-center mt-8 sm:mt-10"
         >
           <p className="text-white/70 text-sm mb-4">
             Not sure if we serve your area? Give us a call!

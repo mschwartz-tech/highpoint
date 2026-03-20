@@ -21,26 +21,13 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Trust badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium px-4 py-2 rounded-full mb-6"
-        >
-          <svg viewBox="0 0 24 24" className="w-4 h-4 text-accent" fill="currentColor">
-            <path d="M12 2L9.09 8.26L2 9.27L7 14.14L5.82 21.02L12 17.77L18.18 21.02L17 14.14L22 9.27L14.91 8.26L12 2Z" />
-          </svg>
-          Serving New Brighton &amp; the Twin Cities North Metro
-        </motion.div>
-
-        {/* Headline */}
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+{/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight max-w-4xl mx-auto"
+          className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-white leading-snug sm:leading-tight max-w-4xl mx-auto"
         >
           Premium Landscape &amp; Property Services for the{" "}
           <span className="text-accent">Twin Cities North Metro</span>
@@ -51,10 +38,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-6 text-lg sm:text-xl text-white/85 max-w-2xl mx-auto leading-relaxed"
+          className="mt-5 sm:mt-6 text-base sm:text-xl text-white/85 max-w-2xl mx-auto leading-relaxed"
         >
-          From pristine lawns to stunning hardscapes, we transform outdoor
-          spaces across New Brighton and the surrounding communities.
+          From pristine lawns to stunning hardscapes, we provide expert lawn care, landscaping, and snow removal services across New Brighton and the surrounding communities.
         </motion.p>
 
         {/* CTAs */}
@@ -62,7 +48,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
           <a
             href="#contact"
@@ -81,22 +67,23 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center pt-2">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-1.5 h-1.5 bg-white/70 rounded-full"
-            />
-          </div>
-        </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:block"
+      >
+        <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center pt-2">
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-1.5 h-1.5 bg-white/70 rounded-full"
+          />
+        </div>
+      </motion.div>
     </section>
   );
 }

@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const stats = [
-  { value: "10+", label: "Years of Experience" },
-  { value: "500+", label: "Projects Completed" },
+  { value: "8+", label: "Years of Experience" },
+  { value: "250+", label: "Projects Completed" },
   { value: "100%", label: "Satisfaction Guaranteed" },
 ];
 
@@ -41,15 +41,15 @@ const values = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 lg:py-28 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section id="about" className="py-16 sm:py-20 lg:py-28 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           {/* Image side */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6 }}
             className="relative"
           >
             <div className="relative rounded-card overflow-hidden aspect-[4/3] shadow-xl">
@@ -68,17 +68,17 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="absolute -bottom-6 -right-4 lg:-right-8 bg-primary text-white rounded-card p-5 shadow-xl"
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="absolute -bottom-6 right-0 sm:-right-4 lg:-right-8 bg-primary text-white rounded-card p-4 sm:p-5 shadow-xl max-w-[calc(100%-2rem)] sm:max-w-none"
             >
-              <div className="flex gap-6">
+              <div className="flex gap-4 sm:gap-6">
                 {stats.map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <div className="text-2xl font-extrabold text-accent leading-none">
+                    <div className="text-xl sm:text-2xl font-extrabold text-accent leading-none">
                       {stat.value}
                     </div>
-                    <div className="text-white/75 text-xs mt-1 leading-tight max-w-[70px]">
+                    <div className="text-white/75 text-[10px] sm:text-xs mt-1 leading-tight max-w-[70px]">
                       {stat.label}
                     </div>
                   </div>
@@ -87,16 +87,16 @@ export default function About() {
             </motion.div>
 
             {/* Decorative leaf shape */}
-            <div className="absolute -top-8 -left-8 w-28 h-28 rounded-full bg-primary/8 -z-10" />
+            <div className="absolute -top-8 -left-8 w-28 h-28 rounded-full bg-primary/8 -z-10 hidden sm:block" />
           </motion.div>
 
           {/* Text side */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="lg:pl-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:pl-4 mt-10 lg:mt-0"
           >
             <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-3">
               Our Story
@@ -104,7 +104,7 @@ export default function About() {
             <h2 className="section-heading">
               Built on Quality<br />Craftsmanship
             </h2>
-            <p className="text-text-secondary text-base leading-relaxed mt-6">
+            <p className="text-text-secondary text-base leading-relaxed mt-5 sm:mt-6">
               High Point Properties is a locally owned and operated landscaping
               company serving New Brighton and the north metro Twin Cities area.
               Our dedicated crew brings passion and precision to every project,
